@@ -5,6 +5,9 @@ import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import logo from "../public/logo.jpeg";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { Router, useRouter } from "next/router";
 
 const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,8 +15,10 @@ const NavBar: React.FC = () => {
   const menuItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const items = [
-    { item: "HOME", id: "home" },
-    { item: "COMPANIES", id: "companies" },
+    { item: "SERVICES", id: "home" },
+    { item: "ABOUT", id: "companies" },
+    { item: "GALLERY", id: "contact" },
+    { item: "TESTIMONIALS", id: "contact" },
     { item: "CONTACT", id: "contact" },
   ];
 
@@ -32,6 +37,23 @@ const NavBar: React.FC = () => {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+  useEffect(() => {
+    if (isMenuOpen) {
+      gsap.to(menuItemsRef.current, {
+        xPercent: 200,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.inOut",
+      });
+    } else {
+      gsap.to(menuItemsRef.current, {
+        xPercent: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.inOut",
+      });
+    }
+  }, [isMenuOpen]);
 
   useEffect(() => {
     if (isBodyLocked) {
@@ -46,7 +68,7 @@ const NavBar: React.FC = () => {
   }, [isBodyLocked]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white z-50 h-[70px] lg:h-[80px] shadow-md ">
+    <nav className=" top-0 left-0 right-0 bg-white z-50 h-[70px] lg:h-[80px] md:shadow-md ">
       <div className="px-4 h-full flex items-center ">
         <div className="w-[220px] flex-shrink-0">
           {" "}
@@ -69,7 +91,7 @@ const NavBar: React.FC = () => {
             {items.map((item, index) => (
               <button
                 key={index}
-                className="text-lg nav-font hover:text-[#D72323] transition-colors"
+                className="text-md nav-font hover:text-[#D72323] transition-colors"
                 onClick={() => scrollToSection(item.id.toLowerCase())}
               >
                 {item.item}
@@ -77,7 +99,7 @@ const NavBar: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="w-[220px] flex-shrink-0 flex justify-end">
+        <div className=" flex-shrink-0 flex justify-between ">
           {" "}
           {/* Adjust width as needed */}
           <div className="hidden lg:block">
@@ -88,7 +110,7 @@ const NavBar: React.FC = () => {
               FREE CONSULTATION
             </button>
           </div>
-          <div className="lg:hidden">
+          <div className="lg:hidden ">
             <button
               onClick={() => toggleMenu()}
               className="text-2xl"
@@ -112,8 +134,43 @@ const NavBar: React.FC = () => {
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } lg:hidden`}
       >
-        {/* Mobile menu content (unchanged) */}
-        {/* ... */}
+        <div className="flex flex-col h-full justify-between">
+          <div className="flex justify-end p-4">
+            <button
+              onClick={() => toggleMenu()}
+              className="text-2xl"
+              aria-label="Close menu"
+            >
+              <IoMdClose className="text-[#D72323] text-4xl" />
+            </button>
+          </div>
+          <div className="flex flex-col gap-14 p-4 overflow-scroll overflow-x-hidden">
+            {items.map((item, index) => (
+              <div className="relative" key={index}>
+                <div
+                  className="bg-[#D72323] absolute top-0 left-0 w-full h-full z-10 rounded-xl"
+                  ref={(el) => {
+                    menuItemsRef.current[index] = el;
+                  }}
+                ></div>
+                <button
+                  className="text-left border-gray-400 text-xl text-black border px-4 rounded-xl shadow-lg py-1 font-bold bg-white w-full"
+                  onClick={() => toggleMenu(item.id.toLowerCase())}
+                >
+                  {item.item}
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className="p-4">
+            <button
+              className="w-full bg-[#D72323] border border-gray-300 py-3 rounded-xl text-lg font-medium text-white font-bold hover:border-[#D72323] hover:bg-white hover:text-[#D72323] transition duration-300"
+              onClick={() => toggleMenu("contact")}
+            >
+              Contact
+            </button>
+          </div>
+        </div>
       </div>
     </nav>
   );
