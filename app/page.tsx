@@ -5,6 +5,9 @@ import landing_desktop from "../public/landing_desktop.jpg";
 import landing_mobile from "../public/mobile_landing.jpg";
 import { useRouter } from "next/navigation";
 import { AboutUs } from "@/components/AboutUs";
+import { Projects } from "@/components/Projects";
+import { Services } from "@/components/Services";
+import { Remodeling } from "@/components/Remodeling";
 
 const page = () => {
   const router = useRouter();
@@ -37,9 +40,17 @@ const page = () => {
         />
         <Image src={landing_mobile} alt="landing img" className="md:hidden" />
       </section>
-      <section className="min-h-screen ">
-        {/* <div className="w-[1440px] h-px bg-[#C4C4C4] mt-12"></div> */}
+      <section className="min-h-screen mt-20">
         <AboutUs />
+      </section>
+      <section className="min-h-screen md:mt-20 mt-14">
+        <Projects />
+      </section>
+      <section className="min-h-screen md:mt-20 mt-14">
+        <Services />
+      </section>
+      <section className="md:mt-20 mt-14">
+        <Remodeling />
       </section>
     </main>
   );

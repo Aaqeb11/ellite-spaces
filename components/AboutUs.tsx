@@ -6,13 +6,13 @@ import { useRouter } from "next/navigation";
 export const AboutUs = () => {
   const router = useRouter();
   return (
-    <div className="flex md:flex-row flex-col mt-20 md:mt-0 gap-4 md:gap-0">
+    <div className="flex md:flex-row flex-col  md:mt-0 gap-4 md:gap-0">
       <p className="text-4xl text-center block md:hidden">ABOUT US</p>
-      <div className="w-full md:border-y-[1px] md:border-[#C4C4C4] md:mt-10 flex items-center jusitfy-center border-r-[1px]">
+      <div className="w-full md:border-y-[1px] md:border-[#C4C4C4] md:mt-10 flex items-center justify-center border-r-[1px]">
         <Image
           src={Aboutus}
           alt="about us"
-          className="md:px-14 md:py-2 md:h-[90%] p-6"
+          className="md:px-10 md:py-2 md:h-[90%] p-2 px-4"
         />
       </div>
       <div className="w-full md:border-y-[1px] md:border-[#C4C4C4] md:mt-10 flex flex-col gap-16">
