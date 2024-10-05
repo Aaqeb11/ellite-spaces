@@ -8,6 +8,8 @@ import { AboutUs } from "@/components/AboutUs";
 import { Projects } from "@/components/Projects";
 import { Services } from "@/components/Services";
 import { Remodeling } from "@/components/Remodeling";
+import { Testimonials } from "@/components/Testimonials";
+import AppointmentForm from "@/components/AppointmentForm";
 
 const page = () => {
   const router = useRouter();
@@ -51,6 +53,15 @@ const page = () => {
       </section>
       <section className="md:mt-20 mt-14">
         <Remodeling />
+      </section>
+      <section className="md:mt-20 mt-14">
+        <Testimonials />
+      </section>
+      <section className="md:mt-20 mt-14 flex flex-col gap-[4vh]">
+        <p className="md:text-6xl text-4xl flex justify-center">
+          CONTACT US NOW
+        </p>
+        <AppointmentForm />
       </section>
     </main>
   );

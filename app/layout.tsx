@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
