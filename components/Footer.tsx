@@ -15,7 +15,7 @@ export const Footer = () => {
               <Image
                 src={logo}
                 alt="logo"
-                className="md:h-[55px] h-[50px] w-auto  hover:cursor-pointer"
+                className=" h-[100px] w-auto  hover:cursor-pointer"
                 priority
               />
             </div>
@@ -51,22 +51,22 @@ export const Footer = () => {
           <div className="flex flex-col justify-between gap-4">
             <Link
               href="mailto:info@ghaffarenterprises "
-              className="md:text-xl text-lg"
+              className="md:text-xl text-md"
             >
               {" "}
               info@ghaffarenterprises.com
             </Link>
-            <Link href="tel:+1 (630) 526-4000" className="md:text-xl text-lg">
+            <Link href="tel:+1 (630) 526-4000" className="md:text-xl text-md">
               {" "}
               630-526-4000
             </Link>
           </div>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <span className="block text-sm text-gray-500 text-center justify-center dark:text-gray-400">
           © 2024{" "}
           <a href="/" className="hover:underline">
-            Ghaffar Enterprises™
+            Elite Spaces™
           </a>
           . All Rights Reserved.
         </span>
