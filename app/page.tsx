@@ -14,12 +14,12 @@ import AppointmentForm from "@/components/AppointmentForm";
 const page = () => {
   const router = useRouter();
   return (
-    <main className="mt-24 sm:mt-[100px] md:mt-[120px] lg:mt-[80px]">
+    <main className="mt-12 md:mt-24 sm:mt-[100px] md:mt-[120px] lg:mt-[80px] overflow-hidden">
       {" "}
       {/* Adjusted padding-top to match navbar height */}
       <section
         id="Home"
-        className="flex flex-col gap-10 items-center justify-center md:min-h-screen  px-4"
+        className="flex flex-col gap-10 items-center justify-center md:min-h-screen  px-4 overflow-hidden"
       >
         <p className="lg:text-[130px] text-center text-5xl md:text-6xl ">
           ELITE SPACES
@@ -30,7 +30,7 @@ const page = () => {
         <div className="lg:hidden block">
           <button
             className="border border-gray-300 px-6 py-2 rounded- text-md font-medium bg-[#D72323] text-white font-bold hover:border-[#D72323] hover:bg-white hover:text-[#D72323] transition duration-300"
-            onClick={() => router.push("#contact")}
+            onClick={() => router.push("#Form")}
           >
             FREE CONSULTATION
           </button>
@@ -42,22 +42,23 @@ const page = () => {
         />
         <Image src={landing_mobile} alt="landing img" className="md:hidden" />
       </section>
-      <section className="min-h-screen mt-20">
+      <section className="min-h-screen mt-20 overflow-hidden">
         <AboutUs />
       </section>
-      <section className="min-h-screen md:mt-20 mt-14">
+      <section className="md:mt-20 mt-14 overflow-hidden">
         <Projects />
       </section>
-      <section className="min-h-screen md:mt-20 mt-14">
+      <section className="min-h-screen md:mt-20 mt-14 overflow-hidden">
         <Services />
       </section>
-      <section className="md:mt-20 mt-14">
+      <section className="md:mt-20 mt-14 overflow-hidden">
         <Remodeling />
       </section>
-      <section className="md:mt-20 mt-14">
+      <section className="md:mt-20 mt-14 overflow-hidden">
         <Testimonials />
       </section>
-      <section className="md:mt-20 mt-14 flex flex-col gap-[4vh]">
+      <section className="md:mt-20 mt-14 flex flex-col gap-[4vh] overflow-hidden"
+      id="Form">
         <p className="md:text-6xl text-4xl flex justify-center">
           CONTACT US NOW
         </p>
