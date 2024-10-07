@@ -14,7 +14,7 @@ import AppointmentForm from "@/components/AppointmentForm";
 const page = () => {
   const router = useRouter();
   return (
-    <main className="mt-24 sm:mt-[100px] md:mt-[120px] lg:mt-[80px]">
+    <main className="mt-12 md:mt-24 sm:mt-[100px] md:mt-[120px] lg:mt-[80px]">
       {" "}
       {/* Adjusted padding-top to match navbar height */}
       <section
