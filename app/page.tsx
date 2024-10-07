@@ -45,7 +45,7 @@ const page = () => {
       <section className="min-h-screen mt-20 overflow-hidden">
         <AboutUs />
       </section>
-      <section className="min-h-screen md:mt-20 mt-14 overflow-hidden">
+      <section className="md:mt-20 mt-14 overflow-hidden">
         <Projects />
       </section>
       <section className="min-h-screen md:mt-20 mt-14 overflow-hidden">
