@@ -19,18 +19,22 @@ export const Remodeling = () => {
   };
 
   return (
-    <div className="flex flex-col gap-[2vh]">
+    <div className=" flex flex-col gap-[2vh] ">
       {/* Header Section */}
       <div className="flex items-center justify-center w-full md:border-y-[1px] md:border-[#C4C4C4]">
         <p className="md:text-6xl text-4xl p-6 text-center">REMODELING</p>
       </div>
 
-      {/* Carousel Section - Desktop */}
+      {/* Carousel Section - Desktop Only */}
       <div className="md:block hidden flex-1 flex items-center justify-center">
         <div className="w-full max-w-[80%] mx-auto">
+          {" "}
+          {/* Control maximum width */}
           <Slider {...carouselSettings}>
             <div className="flex justify-center items-center px-4">
               <div className="relative w-full aspect-[16/9]">
+                {" "}
+                {/* Use aspect ratio */}
                 <Image
                   src={Service}
                   alt="about us1"
@@ -67,46 +71,16 @@ export const Remodeling = () => {
           </Slider>
         </div>
       </div>
-
-      {/* Carousel Section - Mobile */}
-      <div className="md:hidden block w-full">
-        <Slider {...carouselSettings}>
-          <div className="flex justify-center items-center px-4">
-            <div className="relative w-full aspect-[16/9]">
-              <Image
-                src={remod2}
-                alt="projects"
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 80vw"
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-center items-center px-4">
-            <div className="relative w-full aspect-[16/9]">
-              <Image
-                src={remod1}
-                alt="projects"
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 80vw"
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-center items-center px-4">
-            <div className="relative w-full aspect-[16/9]">
-              <Image
-                src={Service}
-                alt="projects"
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 80vw"
-              />
-            </div>
-          </div>
-        </Slider>
+      <div className="flex flex-col gap-6 px-4 md:hidden">
+        <div>
+          <Image src={remod2} alt="projects" className="h-[100%] " />
+        </div>
+        <div>
+          <Image src={remod1} alt="projects" className=" h-[100%]" />
+        </div>
+        <div>
+          <Image src={Service} alt="projects" className=" h-[100%]" />
+        </div>
       </div>
     </div>
   );
