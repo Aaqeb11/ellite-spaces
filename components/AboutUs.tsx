@@ -39,7 +39,7 @@ export const AboutUs = () => {
           <div className="">
             <button
               className="border border-gray-300 px-6 py-2 rounded- text-md font-medium bg-[#D72323] text-white font-bold hover:border-[#D72323] hover:bg-white hover:text-[#D72323] transition duration-300"
-              onClick={() => router.push("#contact")}
+              onClick={() => router.push("#Form")}
             >
               FREE CONSULTATION
             </button>

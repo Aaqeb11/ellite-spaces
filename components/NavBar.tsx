@@ -105,7 +105,7 @@ const NavBar: React.FC = () => {
           <div className="hidden lg:block">
             <button
               className="border border-gray-300 px-6 py-2 rounded- text-md font-medium bg-[#D72323] text-white font-bold hover:border-[#D72323] hover:bg-white hover:text-[#D72323] transition duration-300"
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("Form")}
             >
               FREE CONSULTATION
             </button>
@@ -165,7 +165,7 @@ const NavBar: React.FC = () => {
           <div className="p-4">
             <button
               className="w-full bg-[#D72323] border border-gray-300 py-3 rounded-xl text-lg font-medium text-white font-bold hover:border-[#D72323] hover:bg-white hover:text-[#D72323] transition duration-300"
-              onClick={() => toggleMenu("contact")}
+              onClick={() => toggleMenu("Form")}
             >
               Contact
             </button>
